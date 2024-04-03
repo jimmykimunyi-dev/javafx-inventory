@@ -22,6 +22,12 @@ public class MainMenuController {
 
     private PartDAO partDAO;
 
+    private ProductDAO productDAO;
+
+    public void setProductDAO(ProductDAO productDAO) {
+        this.productDAO = productDAO;
+    }
+
     public void setPartDAO(PartDAO partDAO) {
         this.partDAO = partDAO;
     }
@@ -401,6 +407,61 @@ public class MainMenuController {
     private void loadProductsData() {
         productsList.clear();
         productsList.addAll(DatabaseUtils.getInstance().getAllProducts());
+    }
+
+    @FXML
+    private void handleDeletePart(ActionEvent event) {
+        Part selectedPart = tvparts.getSelectionModel().getSelectedItem();
+        if (selectedPart != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Delete Part");
+            alert.setContentText("Are you sure you want to delete this part?");
+
+            alert.showAndWait().ifPresent(result -> {
+                if (result == ButtonType.OK) {
+                    partsList.remove(selectedPart); // Remove the part from the list
+
+                    // Delete the part from the database
+                    partDAO.delete(selectedPart);
+                }
+            });
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Part Selected");
+            alert.setContentText("Please select a part in the table.");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void handleDeleteProduct(ActionEvent event) {
+        Product selectedProduct = tvproducts.getSelectionModel().getSelectedItem();
+        if (selectedProduct != null) {
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.setTitle("Confirmation Dialog");
+            alert.setHeaderText("Delete Part");
+            alert.setContentText("Are you sure you want to delete this part?");
+
+            alert.showAndWait().ifPresent(result -> {
+                if (result == ButtonType.OK) {
+                    productsList.remove(selectedProduct); // Remove the part from the list
+
+                    // Delete the product from the database
+
+                    productDAO.delete(selectedProduct);
+                }
+            });
+        } else {
+            // Nothing selected.
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("No Selection");
+            alert.setHeaderText("No Part Selected");
+            alert.setContentText("Please select a part in the table.");
+            alert.showAndWait();
+        }
     }
 
 }

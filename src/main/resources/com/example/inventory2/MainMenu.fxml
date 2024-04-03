@@ -66,7 +66,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btndelete" mnemonicParsing="false" text="Delete">
+                  <Button fx:id="btndelete" mnemonicParsing="false" onAction="#handleDeletePart" text="Delete">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
@@ -102,8 +102,8 @@
             </GridPane>
             <TableView fx:id="tvproducts" prefHeight="114.0" prefWidth="390.0">
                <columns>
-                  <TableColumn fx:id="tcid2" prefWidth="75.0" text="Part ID" />
-                  <TableColumn fx:id="tcname2" prefWidth="75.0" text="Part Name" />
+                  <TableColumn fx:id="tcid2" prefWidth="75.0" text="Pruduct ID" />
+                  <TableColumn fx:id="tcname2" prefWidth="75.0" text="Product Name" />
                   <TableColumn fx:id="tcinv2" prefWidth="98.0" text="Inventory Level" />
                   <TableColumn fx:id="tcprice2" prefWidth="151.0" text="Price/ Cost per Unit" />
                </columns>
@@ -123,7 +123,7 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="btndelete2" mnemonicParsing="false" text="Delete">
+                  <Button fx:id="btndelete2" mnemonicParsing="false" onAction="#handleDeleteProduct" text="Delete">
                      <HBox.margin>
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </HBox.margin>

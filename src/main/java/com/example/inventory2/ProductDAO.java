@@ -23,4 +23,38 @@ public class ProductDAO {
             e.printStackTrace();
         }
     }
+
+    public void update(Product product) {
+        String sql = "UPDATE product SET name = ?, inv = ?, cost = ?, max = ?, min = ? WHERE id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setString(1, product.getName());
+            statement.setInt(2, product.getInventory());
+            statement.setInt(3, product.getCost());
+            statement.setInt(4, product.getMax());
+            statement.setInt(5, product.getMin());
+            statement.setInt(6, product.getId());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void delete(Product product) {
+        String sql = "DELETE FROM product WHERE id = ?";
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement statement = connection.prepareStatement(sql)) {
+
+            statement.setInt(1, product.getId());
+
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
