@@ -38,7 +38,7 @@
                         <Insets right="70.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="tfid" prefHeight="38.0" prefWidth="190.0" />
+                  <TextField fx:id="tfid" prefHeight="38.0" prefWidth="190.0" promptText="Enter Product ID" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -54,7 +54,7 @@
                         <Insets right="70.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="tfname" prefHeight="38.0" prefWidth="190.0" />
+                  <TextField fx:id="tfname" prefHeight="38.0" prefWidth="190.0" promptText="Enter Product Name" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -70,7 +70,7 @@
                         <Insets right="70.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="tfinv" prefHeight="38.0" prefWidth="190.0" />
+                  <TextField fx:id="tfinv" prefHeight="38.0" prefWidth="190.0" promptText="Enter Prodcuct Inventory" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -86,7 +86,7 @@
                         <Insets right="70.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="tfcost" prefHeight="38.0" prefWidth="190.0" />
+                  <TextField fx:id="tfcost" prefHeight="38.0" prefWidth="190.0" promptText="Enter Product Cost" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -94,7 +94,7 @@
             </HBox>
             <HBox prefHeight="35.0" prefWidth="439.0">
                <children>
-                  <Label prefHeight="25.0" prefWidth="40.0" text="Max">
+                  <Label prefHeight="25.0" prefWidth="68.0" text="Max">
                      <padding>
                         <Insets left="10.0" />
                      </padding>
@@ -102,7 +102,7 @@
                         <Insets right="70.0" />
                      </HBox.margin>
                   </Label>
-                  <TextField fx:id="tfmax" prefHeight="25.0" prefWidth="62.0" />
+                  <TextField fx:id="tfmax" prefHeight="25.0" prefWidth="144.0" promptText="Enter Maximum Products" />
                   <Label prefHeight="32.0" prefWidth="67.0" text="Min">
                      <HBox.margin>
                         <Insets />
@@ -111,7 +111,7 @@
                         <Insets left="10.0" />
                      </padding>
                   </Label>
-                  <TextField fx:id="tfmin" prefHeight="25.0" prefWidth="86.0" />
+                  <TextField fx:id="tfmin" prefHeight="25.0" prefWidth="162.0" promptText="Enter Minimum Products" />
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -208,6 +208,5 @@
             </VBox>
          </children>
       </VBox>
-      <TextField fx:id="tfsearch" layoutX="760.0" layoutY="58.0" prefHeight="25.0" prefWidth="201.0" text="Search by Part ID or Name" />
    </children>
 </AnchorPane>

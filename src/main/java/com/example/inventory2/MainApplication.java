@@ -20,15 +20,9 @@ public class MainApplication extends Application {
         // Initialize the ProductDAO
         ProductDAO productDAO = new ProductDAO();
 
-
         // Load the MainMenu.fxml file
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("MainMenu.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("home.fxml"));
         Parent root = loader.load();
-
-        // Get the controller instance and set the partDAO
-        MainMenuController controller = loader.getController();
-        controller.setPartDAO(partDAO);
-        controller.setProductDAO(productDAO);
 
         // Set the scene
         Scene scene = new Scene(root);
